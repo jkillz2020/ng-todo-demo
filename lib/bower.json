@@ -1,0 +1,17 @@
+{
+  "name": "ng-todo-demo",
+  "homepage": "https://github.com/jkillz2020/ng-todo-demo",
+  "authors": [
+    "jkillz2020 <kilgore.josh@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
