@@ -1,9 +1,14 @@
 $lobster: bisque;
+$red: red;
 
 body {
   background-color: $lobster;
 }
 
-.testing {
-  width: percentage(5/7);
+h1 {
+  text-align: center;
+}
+
+.main-container {
+  border: 2px dashed $red;
 }
