@@ -1,36 +1,14 @@
-app.controller("ItemListCtrl", function($scope){
+app.controller("ItemListCtrl", function($scope, $http){
+  $scope.items = [];
 
-  $scope.items = [
-  {
-    id: 0,
-    task: 'mow the lawn',
-    isCompleted: true,
-    dueDate: '12/5/17',
-    assignedTo: 'greg',
-    location: "Zoe's house",
-    urgency: "low",
-    dependencies: ["sunshine, clippers, hat, water, headphones"]
-  },
-  {
-    id: 1,
-    task: 'grade quizzes zoe',
-    isCompleted: false,
-    dueDate: '12/5/16',
-    assignedTo: 'joe',
-    location: "NSS",
-    urgency: "low",
-    dependencies: ["wifi, vodka, tissues, headphones"]
-  },
-  {
-    id: 2,
-    task: 'take a nap',
-    isCompleted: false,
-    dueDate: '5/21/16',
-    assignedTo: 'zoe',
-    location: "Zoe's house",
-    urgency: "medium",
-    dependencies: ["wifi, vodka, tissues, nap, headphones"]
-  }
-];
-
+  $http.get("https://todo-angular-js.firebaseio.com/items.json")
+  .success(function(itemObject){
+    var itemCollection = itemObject;
+    console.log("itemObject", itemCollection);
+    Object.keys(itemCollection).forEach(function(key){
+      itemCollection[key].id=key;
+      $scope.items.push(itemCollection[key]);
+    })
+  })
+    
 });
