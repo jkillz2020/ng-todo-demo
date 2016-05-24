@@ -11,7 +11,7 @@ app.config(function($routeProvider){
       templateUrl: "partials/item-new.html",
       controller: "ItemNewCtrl"
     }).
-    when("/user/details",{
+    when("/user/:itemId",{
       templateUrl: "partials/user-details.html",
       controller: "ItemViewCtrl"
     }).
