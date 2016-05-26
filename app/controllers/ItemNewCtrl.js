@@ -1,4 +1,4 @@
-app.controller("ItemNewCtrl", function($scope, $http, $location){
+app.controller("ItemNewCtrl", function($scope, $http, $location, itemStorage){
   $scope.task = "";
   $scope.newTask = {
     assignedTo: "",
